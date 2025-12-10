@@ -19,10 +19,12 @@
     "bootstrap": "^5.2.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "framer-motion": "^12.23.25",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^10.1.0",
     "sonner": "^0.3.5",
     "typescript": "5.0.3"
   },

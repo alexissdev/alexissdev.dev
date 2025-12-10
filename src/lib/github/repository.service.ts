@@ -1,4 +1,5 @@
 import Repository, { getApiUrl } from "./github.repository";
+import { projectMeta } from "@/data/projectMeta";
 
 export async function getData(endPoint: string): Promise<any> {
   const accessToken = process.env.GITHUB_ACCESS_TOKEN;
@@ -28,8 +29,30 @@ export async function getRepositoryOfUser(
       description: repo.description,
       stars: repo.stargazers_count,
       defaultBranch: repo.default_branch,
+      topics: repo.topics,
+      featured: projectMeta[repo.name]?.featured ?? false,
+      stargazersCount: repo.stargazers_count,
+      forksCount: repo.forks_count,
+      updatedAt: repo.updated_at,
+      language: repo.language,
     });
   }
 
   return repositoryArray;
+}
+
+export async function getReadme(owner: string, repo: string) {
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/readme`,
+    {
+      headers: {
+        Accept: "application/vnd.github.v3.raw",
+      },
+    }
+  );
+
+  if (!res.ok) return null;
+
+  const markdown = await res.text();
+  return markdown;
 }

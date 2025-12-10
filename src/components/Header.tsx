@@ -6,7 +6,10 @@ export default function Header({ metaData }: { metaData: Metadata }) {
     <div>
       <Head>
         <title>{metaData.title}</title>
-        <link rel="icon" type="image/x-icon" href="/favicon-1.jpg" />
+        <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
+        <link rel="apple-touch-icon" href="/icon/apple-touch-icon.png" />
 
         <meta property="description" content={metaData.description} />
         <meta property="og:type" content="website" />

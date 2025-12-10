@@ -30,5 +30,12 @@ export default function ProjectsPage({
 
 export async function getStaticProps() {
   const repositories: Repository[] = await getRepositoryOfUser("alexissdev");
-  return { props: { repositories } };
+
+  const sortedRepositories = repositories.sort(
+    (a, b) => Number(b.featured) - Number(a.featured)
+  );
+
+  return { props: { 
+    repositories: sortedRepositories
+   } };
 }
