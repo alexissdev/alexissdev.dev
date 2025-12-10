@@ -43,7 +43,7 @@ export default function Home({
           <div className="flex-1">
             <p className="text-white font-semibold">Welcome!</p>
             <p className="text-white/60 text-sm">
-              I'm Alexis, Full Stack Developer.
+              {" I'm Alexis, Full Stack Developer."}
             </p>
           </div>
           <button
@@ -77,7 +77,7 @@ export default function Home({
     <div className="bg-primary text-white">
       {/* ✅ HERO OPTIMIZADO PARA LCP */}
       <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-8 pb-24 overflow-hidden">
-        <h1 className="text-6xl font-bold mb-3">I'm Alexis</h1>
+        <h1 className="text-6xl font-bold mb-3">I&apos;m Alexis</h1>
 
         <h2 className="text-3xl text-purple-400 font-medium mb-6">
           Full Stack Developer
