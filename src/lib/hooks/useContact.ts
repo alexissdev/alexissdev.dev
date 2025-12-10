@@ -11,7 +11,7 @@ export default function useContact() {
     setContact({ ...contact, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const emptyProperty: string = checkEmptyProperties(contact);

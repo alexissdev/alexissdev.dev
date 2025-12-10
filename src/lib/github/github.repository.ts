@@ -4,6 +4,12 @@ export default interface Repository {
   description: string;
   stars: number;
   defaultBranch: string;
+  topics: string[];
+  featured: boolean
+  stargazersCount: number;
+  forksCount: number;
+  updatedAt: string;
+  language: string;
 }
 
 export const getApiUrl = (): string => {
