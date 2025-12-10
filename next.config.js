@@ -1,9 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true, // ✅ Recomendado en producción
+
   images: {
-    domains: ["http.cat"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "http.cat",
+      },
+    ],
   },
+
   async redirects() {
     return require("./redirects.json");
   },
