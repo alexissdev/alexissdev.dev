@@ -5,9 +5,20 @@ export async function getData(endPoint: string): Promise<any> {
   const accessToken = process.env.GITHUB_ACCESS_TOKEN;
   const url = `${getApiUrl()}${endPoint}`;
 
-  const response = accessToken
-    ? await fetch(url, { headers: { Authorization: `token ${accessToken}` } })
-    : await fetch(url);
+  const response = await fetch(url, {
+    headers: accessToken
+      ? {
+          Authorization: `token ${accessToken}`,
+        }
+      : {},
+    next: {
+      revalidate: 3600,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Error fetching GitHub data");
+  }
 
   return await response.json();
 }
