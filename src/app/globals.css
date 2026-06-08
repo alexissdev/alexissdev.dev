@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0e0816;
+  --color-secondary: #160d22;
+  --color-hover: #610c63;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position:  400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: 8px;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.7; }
+}
+
+.animate-fade-up   { animation: fade-up  0.7s ease-out both; }
+.animate-fade-in   { animation: fade-in  0.5s ease-out both; }
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+html { scroll-behavior: smooth; }
+
+/* Hide native cursor on pointer devices only */
+@media (hover: hover) {
+  * { cursor: none !important; }
+}
+
+body {
+  background-color: #0e0816;
+  color: rgba(255,255,255,0.85);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prose for README */
+.prose-portfolio h1,
+.prose-portfolio h2,
+.prose-portfolio h3 { color: #e2d9f3; font-weight: 600; }
+.prose-portfolio p,
+.prose-portfolio li  { color: rgba(255,255,255,0.65); line-height: 1.75; }
+.prose-portfolio code {
+  color: #d8b4fe;
+  background: rgba(139,92,246,0.12);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.prose-portfolio pre {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 10px;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+.prose-portfolio pre code { background: none; padding: 0; }
+.prose-portfolio a { color: #a78bfa; }
+.prose-portfolio ul > li::marker,
+.prose-portfolio ol > li::marker { color: #7c3aed; }
+.prose-portfolio blockquote {
+  border-left: 3px solid rgba(139,92,246,0.4);
+  color: rgba(255,255,255,0.55);
+  padding-left: 1rem;
+}
