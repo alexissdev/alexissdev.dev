@@ -188,6 +188,6 @@ The home and projects pages use ISR with `revalidate: 3600` (1 hour) so GitHub d
 
 ---
 
-## License
+## License!
 
 MIT — feel free to use this as inspiration for your own portfolio.
