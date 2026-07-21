@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiStar, FiExternalLink } from "react-icons/fi";
+import { FiStar, FiExternalLink, FiGlobe } from "react-icons/fi";
 import { Repository } from "@/types";
 
 interface Props {
@@ -77,16 +77,30 @@ export default function ProjectCardIsland({ repo, index = 0 }: Props) {
         {/* Footer */}
         <div className="relative z-10 flex items-center justify-between pt-3 border-t border-white/5">
           <span className="text-[10px] text-white/25">{timeAgo(repo.updatedAt)}</span>
-          <a
-            href={`https://github.com/alexissdev/${repo.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${repo.name} on GitHub`}
-            className="flex items-center gap-1 text-[11px] text-white/35 hover:text-purple-400 transition-colors"
-          >
-            <FiExternalLink size={11} />
-            GitHub
-          </a>
+          <div className="flex items-center gap-3">
+            {repo.homepage && (
+              <a
+                href={repo.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${repo.name} preview`}
+                className="flex items-center gap-1 text-[11px] text-white/35 hover:text-emerald-400 transition-colors"
+              >
+                <FiGlobe size={11} />
+                Visit Preview
+              </a>
+            )}
+            <a
+              href={`https://github.com/alexissdev/${repo.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${repo.name} on GitHub`}
+              className="flex items-center gap-1 text-[11px] text-white/35 hover:text-purple-400 transition-colors"
+            >
+              <FiExternalLink size={11} />
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>

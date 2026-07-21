@@ -49,6 +49,7 @@ export async function getRepositories(): Promise<Repository[]> {
       forksCount: repo.forks_count,
       updatedAt: repo.updated_at,
       language: repo.language ?? "",
+      homepage: repo.homepage || null,
     }));
 }
 
@@ -155,5 +156,6 @@ export async function getRepository(repoName: string): Promise<Repository | null
     forksCount: repo.forks_count,
     updatedAt: repo.updated_at,
     language: repo.language ?? "",
+    homepage: repo.homepage || null,
   };
 }

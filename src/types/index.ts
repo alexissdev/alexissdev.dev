@@ -10,4 +10,5 @@ export interface Repository {
   forksCount: number;
   updatedAt: string;
   language: string;
+  homepage: string | null;
 }
