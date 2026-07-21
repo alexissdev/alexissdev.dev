@@ -36,6 +36,7 @@ export default function AboutMeIsland() {
             src="/me.jpg"
             alt="Alexis Costa"
             fill
+            sizes="(min-width: 768px) 208px, 176px"
             loading="lazy"
             quality={80}
             className="rounded-2xl object-cover"
