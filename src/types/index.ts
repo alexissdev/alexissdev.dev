@@ -9,6 +9,7 @@ export interface Repository {
   stargazersCount: number;
   forksCount: number;
   updatedAt: string;
+  pushedAt: string;
   language: string;
   homepage: string | null;
 }

@@ -28,6 +28,9 @@ export default async function HomePage() {
     getContributions().catch(() => null),
   ]);
   const featuredRepos = repos.filter((r) => r.featured).slice(0, 3);
+  const latestActiveRepo = [...repos].sort(
+    (a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime()
+  )[0];
 
   return (
     <>
@@ -169,8 +172,20 @@ export default async function HomePage() {
               </span>
             </div>
             <div className="grid sm:grid-cols-3 gap-6 flex-1">
+              <div>
+                <p className="text-xs text-white/25 uppercase tracking-wider mb-1.5">Building</p>
+                {latestActiveRepo ? (
+                  <Link
+                    href={`/projects/${latestActiveRepo.name}`}
+                    className="text-sm text-white/60 hover:text-purple-400 leading-relaxed transition-colors"
+                  >
+                    {latestActiveRepo.name}
+                  </Link>
+                ) : (
+                  <p className="text-sm text-white/60 leading-relaxed">alexissdev.dev v2 — this portfolio</p>
+                )}
+              </div>
               {[
-                { label: "Building", value: "alexissdev.dev v2 — this portfolio" },
                 { label: "Learning", value: "System design & distributed architectures" },
                 { label: "Listening", value: "Lo-fi & focus playlists" },
               ].map(({ label, value }) => (

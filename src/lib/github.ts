@@ -48,6 +48,7 @@ export async function getRepositories(): Promise<Repository[]> {
       stargazersCount: repo.stargazers_count,
       forksCount: repo.forks_count,
       updatedAt: repo.updated_at,
+      pushedAt: repo.pushed_at,
       language: repo.language ?? "",
       homepage: repo.homepage || null,
     }));
@@ -155,6 +156,7 @@ export async function getRepository(repoName: string): Promise<Repository | null
     stargazersCount: repo.stargazers_count,
     forksCount: repo.forks_count,
     updatedAt: repo.updated_at,
+    pushedAt: repo.pushed_at,
     language: repo.language ?? "",
     homepage: repo.homepage || null,
   };
