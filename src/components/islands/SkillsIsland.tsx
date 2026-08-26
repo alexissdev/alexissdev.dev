@@ -6,9 +6,10 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
   SiGit, SiGithub, SiSwift, SiVite, SiKotlin,
   SiPostgresql, SiRedis, SiApachemaven, SiPostman, SiLinux, SiVercel, SiGradle,
+  SiApachekafka, SiRabbitmq, SiSpigotmc,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
+import { FaJava, FaSyringe } from "react-icons/fa6";
+import { TbApi, TbBroadcast, TbPlugConnected } from "react-icons/tb";
 
 const groups = [
   {
@@ -17,13 +18,23 @@ const groups = [
       { icon: FaJava,     name: "Java",       color: "#f89820" },
       { icon: SiSpring,   name: "Spring Boot", color: "#6db33f" },
       { icon: SiDocker,   name: "Docker",      color: "#2496ed" },
-      { icon: SiMysql,    name: "MySQL",       color: "#4479a1" },
-      { icon: SiMongodb,  name: "MongoDB",     color: "#47a248" },
       { icon: TbApi,      name: "REST APIs",   color: "#a78bfa" },
-      { icon: SiPostgresql,   name: "PostgreSQL", color: "#4169e1" },
-      { icon: SiRedis,        name: "Redis",      color: "#ff4438" },
+      { icon: FaSyringe,      name: "Google Guice",    color: "#a78bfa" },
+      { icon: TbBroadcast,    name: "Guava EventBus",  color: "#a78bfa" },
       { icon: SiKotlin,       name: "Kotlin",     color: "#7f52ff" },
       { icon: SiSwift,        name: "Swift",      color: "#f05138" },
+    ],
+  },
+  {
+    label: "Messaging & Data",
+    skills: [
+      { icon: SiApachekafka,  name: "Apache Kafka", color: "#ffffff" },
+      { icon: SiRabbitmq,     name: "RabbitMQ",     color: "#ff6600" },
+      { icon: SiRedis,        name: "Redis",        color: "#ff4438" },
+      { icon: TbPlugConnected, name: "WebSocket/STOMP", color: "#a78bfa" },
+      { icon: SiMysql,    name: "MySQL",       color: "#4479a1" },
+      { icon: SiMongodb,  name: "MongoDB",     color: "#47a248" },
+      { icon: SiPostgresql,   name: "PostgreSQL", color: "#4169e1" },
     ],
   },
   {
@@ -34,6 +45,12 @@ const groups = [
       { icon: SiTypescript,  name: "TypeScript",  color: "#3178c6" },
       { icon: SiTailwindcss, name: "Tailwind CSS",color: "#38bdf8" },
       { icon: SiVite,        name: "Vite",        color: "#646cff" },
+    ],
+  },
+  {
+    label: "Minecraft/Game Servers",
+    skills: [
+      { icon: SiSpigotmc, name: "BungeeCord/Spigot API", color: "#f7a600" },
     ],
   },
   {

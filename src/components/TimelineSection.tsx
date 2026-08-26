@@ -22,16 +22,10 @@ const events = [
     tags: ["React", "Next.js", "TypeScript"],
   },
   {
-    year: "2024",
-    title: "Real-world projects",
-    desc: "Shipped production apps: a construction company site, a Minecraft backend system, and an events controller.",
-    tags: ["braian-contruciones", "caduceus", "events"],
-  },
-  {
-    year: "2025",
-    title: "Currently building",
-    desc: "Focused on scalable architectures, clean UI systems and open source. Always learning.",
-    tags: ["Open Source", "Architecture"],
+    year: "2024/2025",
+    title: "Distributed systems & production tools",
+    desc: "Shipped a microservices chat platform (Relay), a live production quoting tool for a construction company, a multi-server Minecraft PvP network (Annihilation), and a DDD-based Factions game core (Kronos).",
+    tags: ["Relay", "Quote Generator", "Annihilation", "Kronos"],
   },
 ];
 

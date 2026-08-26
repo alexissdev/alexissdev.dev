@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getRepositories, getContributions } from "@/lib/github";
+import { getRepositories, getContributions, featuredOrder } from "@/lib/github";
 import HeroArrowIsland from "@/components/islands/HeroArrowIsland";
 import TypewriterIsland from "@/components/islands/TypewriterIsland";
 import AboutMeIsland from "@/components/islands/AboutMeIsland";
@@ -27,7 +27,9 @@ export default async function HomePage() {
     getRepositories().catch(() => []),
     getContributions().catch(() => null),
   ]);
-  const featuredRepos = repos.filter((r) => r.featured).slice(0, 3);
+  const featuredRepos = repos
+    .filter((r) => r.featured)
+    .sort((a, b) => featuredOrder.indexOf(a.name) - featuredOrder.indexOf(b.name));
   const latestActiveRepo = [...repos].sort(
     (a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime()
   )[0];

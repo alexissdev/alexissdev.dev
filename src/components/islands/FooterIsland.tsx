@@ -36,7 +36,7 @@ export default function FooterIsland() {
           <div className="space-y-4">
             <p className="text-white/40 text-xs uppercase tracking-widest">Repositories</p>
             <ul className="space-y-2.5">
-              {["crud-app", "alexissdev.me", "Balder", "Isis"].map((repo) => (
+              {["relay-backend", "quote-generator", "annihilation", "kronos"].map((repo) => (
                 <li key={repo}>
                   <a href={`https://github.com/alexissdev/${repo}`} target="_blank"
                     rel="noopener noreferrer" aria-label={repo}

@@ -13,6 +13,8 @@ const skills = [
   { label: "MySQL", group: "backend" },
   { label: "MongoDB", group: "backend" },
   { label: "REST APIs", group: "backend" },
+  { label: "Kafka", group: "backend" },
+  { label: "Redis", group: "backend" },
   { label: "React", group: "frontend" },
   { label: "Next.js", group: "frontend" },
   { label: "TypeScript", group: "frontend" },
@@ -79,14 +81,17 @@ export default function AboutMeIsland() {
           </h2>
           <div className="space-y-4 text-white/55 text-sm leading-relaxed">
             <p>
-              I&apos;m a 20-year-old Full Stack Developer from Buenos Aires with 3–4
+              I&apos;m a 21-year-old Full Stack Developer from Buenos Aires with 3–4
               years of experience. I specialize in Java and Spring Boot for backend
-              systems, and React, Next.js, and TypeScript for modern frontends.
+              systems, distributed and event-driven architectures with Kafka,
+              RabbitMQ, and Redis pub/sub, and React, Next.js, and TypeScript for
+              modern frontends.
             </p>
             <p>
               I care about clean architecture, performance, and interfaces that
-              feel natural to use. Whether it&apos;s a REST API, a full stack app, or
-              a scalable microservice — I enjoy building it right.
+              feel natural to use. Whether it&apos;s a REST API, an event-driven
+              microservice, or a scalable distributed system — I enjoy building
+              it right.
             </p>
           </div>
         </div>
